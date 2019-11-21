@@ -10,7 +10,7 @@ print(BOARDER, '\n'
       '\n',BOARDER)
 
 quote_type = int(input())
-list_of_quote_types = {1: "AA", 2: "HU", 3: "IN", 4: "MO"} #Dict to keep values for each quote category. AA=Aaron HU=Humor IN=Inspirational MO=Motivational
+list_of_quote_types = {1: "AA", 2: "IN", 3: "HU", 4: "MO"} #Dict to keep values for each quote category. AA=Aaron HU=Humor IN=Inspirational MO=Motivational
 keymatch_value = list_of_quote_types[quote_type]
 #print(keymatch_value)
 
@@ -18,7 +18,7 @@ keymatch_value = list_of_quote_types[quote_type]
 if platform.system() == "Windows":
     os.chdir(os.environ['HOMEPATH'])
 else:
-    os.chdir(os.system('HOME'))
+    os.chdir(os.environ['HOME'])
 
 #below opens file reads it out so we can sort through it and apply the keymatch_value from our dict to pick a random quote of selected type.
 quote_file = open("quotes.txt", "r")
